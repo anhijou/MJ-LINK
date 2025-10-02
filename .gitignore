@@ -1,0 +1,40 @@
+# Node modules
+/node_modules/
+
+# Composer vendor directory (PHP dependencies)
+vendor/
+
+# Composer lock file (optional, but usually committed)
+/composer.lock
+
+# Environment files
+.env
+
+# Logs and temp files
+*.log
+*.tmp
+*.cache
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# IDE/editor folders and files (e.g., VSCode)
+.vscode/
+.idea/
+
+# Build outputs (if any build system used)
+dist/
+build/
+
+# Package manager lock files (optional)
+/package-lock.json
+/yarn.lock
+
+# PHP specific
+*.php.swp
+
+# Other files to consider ignoring:
+# node_modules is already ignored
+# For public files, consider if you want to ignore generated files
+

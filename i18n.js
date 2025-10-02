@@ -21,7 +21,7 @@ class I18n {
           for: "pour",
           your_business: "votre entreprise",
           description:
-            "Nous offrir des services fiables, innovants et adaptés à vos besoins pour garantir la performance et la sécurité de vos systèmes.",
+            "Nous offrons des services fiables, innovants et adaptés à vos besoins afin de garantir la performance et la sécurité de vos systèmes.",
         },
         about: {
           title: "— Qui sommes Nous",
@@ -59,9 +59,9 @@ class I18n {
             "Notre expertise multi-sectorielle vous garantit des services fiables et innovants, quel que soit votre domaine d'activité.",
         },
         contact: {
-          title: "— Contact",
+          title: "MJ-LINK",
           subtitle: "Contactez-nous à tout moment",
-          description: "Besoin d'aide ? L'équipe M-LINK est là pour vous.<br>Contactez-nous !",
+          description: "Besoin d'aide ? L'équipe MJ-LINK est là pour vous.<br>Contactez-nous !",
           form: {
             name: "Votre nom",
             email: "Votre email",
@@ -143,74 +143,75 @@ class I18n {
         },
         footer: {
           explore: "Explore",
+           about: "About Us",
           copyright: "Copyright © 2024 | Powered by MJ-LINK",
         },
       },
-      ar: {
-        nav: {
-          home: "الرئيسية",
-          about: "من نحن",
-          services: "الخدمات",
-          industries: "الصناعات",
-          contact: "اتصل بنا",
-        },
-        hero: {
-          solutions: "حلول تقنية المعلومات",
-          for: "لـ",
-          your_business: "شركتك",
-          description: "نقدم خدمات موثوقة ومبتكرة ومصممة خصيصاً لاحتياجاتك لضمان الأداء والأمان لأنظمتك.",
-        },
-        about: {
-          title: "— من نحن",
-          subtitle: "شريكك الموثوق",
-          description1: "إم-لينك هي شركة مغربية متخصصة في تكامل الحلول المعلوماتية والرقمية.",
-          description2:
-            "مهمتنا هي مرافقة الشركات في تحولها التكنولوجي من خلال تقديم حلول موثوقة ومبتكرة ومتكيفة مع احتياجاتها.",
-        },
-        services: {
-          title: "— خدماتنا",
-          infrastructure: {
-            title: "البنية التحتية للشبكات",
-            description: "تصميم وتركيب الشبكات المعلوماتية المتكيفة مع شركتك.",
-          },
-          support: {
-            title: "الدعم التقني في الموقع",
-            description: "مساعدة سريعة وفعالة لحل مشاكلك المعلوماتية مباشرة في الموقع.",
-          },
-          security: {
-            title: "التحكم في الوصول والمراقبة بالفيديو",
-            description: "حلول موثوقة وحديثة لتأمين مبانيك ووصولك.",
-          },
-          see_more: "المزيد ←",
-        },
-        industries: {
-          title: "— الصناعات",
-          subtitle: "حلول متكيفة مع كل قطاع نشاط",
-          description1: "في إم-لينك، نعلم أن كل قطاع له تحدياته الخاصة في مجال تقنيات المعلومات والاتصالات.",
-          description2:
-            "لهذا نقترح حلولاً مخصصة، مصممة لتلبية احتياجات الصحة والتعليم واللوجستيات والصناعة التحويلية والتجارة والمالية ومراكز البيانات.",
-          description3: "خبرتنا متعددة القطاعات تضمن لك خدمات موثوقة ومبتكرة، مهما كان مجال نشاطك.",
-        },
-        contact: {
-          title: "— اتصل بنا",
-          subtitle: "اتصل بنا في أي وقت",
-          description: "تحتاج مساعدة؟ فريق إم-لينك هنا من أجلك.<br>اتصل بنا!",
-          form: {
-            name: "اسمك",
-            email: "بريدك الإلكتروني",
-            phone: "الهاتف",
-            message: "رسالتك",
-            submit: "إرسال الرسالة",
-            sending: "جاري الإرسال...",
-            success: "تم إرسال الرسالة بنجاح!",
-            error: "يرجى ملء جميع الحقول المطلوبة.",
-          },
-        },
-        footer: {
-          explore: "استكشف",
-          copyright: "حقوق الطبع والنشر © 2024 | مدعوم من إم-لينك",
-        },
-      },
+      // ar: {
+      //   nav: {
+      //     home: "الرئيسية",
+      //     about: "من نحن",
+      //     services: "الخدمات",
+      //     industries: "الصناعات",
+      //     contact: "اتصل بنا",
+      //   },
+      //   hero: {
+      //     solutions: "حلول تقنية المعلومات",
+      //     for: "لـ",
+      //     your_business: "شركتك",
+      //     description: "نقدم خدمات موثوقة ومبتكرة ومصممة خصيصاً لاحتياجاتك لضمان الأداء والأمان لأنظمتك.",
+      //   },
+      //   about: {
+      //     title: "— من نحن",
+      //     subtitle: "شريكك الموثوق",
+      //     description1: "إم-لينك هي شركة مغربية متخصصة في تكامل الحلول المعلوماتية والرقمية.",
+      //     description2:
+      //       "مهمتنا هي مرافقة الشركات في تحولها التكنولوجي من خلال تقديم حلول موثوقة ومبتكرة ومتكيفة مع احتياجاتها.",
+      //   },
+      //   services: {
+      //     title: "— خدماتنا",
+      //     infrastructure: {
+      //       title: "البنية التحتية للشبكات",
+      //       description: "تصميم وتركيب الشبكات المعلوماتية المتكيفة مع شركتك.",
+      //     },
+      //     support: {
+      //       title: "الدعم التقني في الموقع",
+      //       description: "مساعدة سريعة وفعالة لحل مشاكلك المعلوماتية مباشرة في الموقع.",
+      //     },
+      //     security: {
+      //       title: "التحكم في الوصول والمراقبة بالفيديو",
+      //       description: "حلول موثوقة وحديثة لتأمين مبانيك ووصولك.",
+      //     },
+      //     see_more: "المزيد ←",
+      //   },
+      //   industries: {
+      //     title: "— الصناعات",
+      //     subtitle: "حلول متكيفة مع كل قطاع نشاط",
+      //     description1: "في إم-لينك، نعلم أن كل قطاع له تحدياته الخاصة في مجال تقنيات المعلومات والاتصالات.",
+      //     description2:
+      //       "لهذا نقترح حلولاً مخصصة، مصممة لتلبية احتياجات الصحة والتعليم واللوجستيات والصناعة التحويلية والتجارة والمالية ومراكز البيانات.",
+      //     description3: "خبرتنا متعددة القطاعات تضمن لك خدمات موثوقة ومبتكرة، مهما كان مجال نشاطك.",
+      //   },
+      //   contact: {
+      //     title: "— اتصل بنا",
+      //     subtitle: "اتصل بنا في أي وقت",
+      //     description: "تحتاج مساعدة؟ فريق إم-لينك هنا من أجلك.<br>اتصل بنا!",
+      //     form: {
+      //       name: "اسمك",
+      //       email: "بريدك الإلكتروني",
+      //       phone: "الهاتف",
+      //       message: "رسالتك",
+      //       submit: "إرسال الرسالة",
+      //       sending: "جاري الإرسال...",
+      //       success: "تم إرسال الرسالة بنجاح!",
+      //       error: "يرجى ملء جميع الحقول المطلوبة.",
+      //     },
+      //   },
+      //   footer: {
+      //     explore: "استكشف",
+      //     copyright: "حقوق الطبع والنشر © 2024 | مدعوم من إم-لينك",
+      //   },
+      // },
     }
   }
 
