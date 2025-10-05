@@ -7,7 +7,7 @@
       content="width=device-width, initial-scale=1.0"
     />
     <title>
-      MJl-LINK - Solutions IT pour votre entreprise
+      <!-- title -->
     </title>
     <link
       rel="preconnect"
@@ -27,6 +27,9 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="src/style.css" />
+
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+<script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
 
     <!-- Using Tailwind CDN instead of local build -->
     <script src="https://unpkg.com/phosphor-icons"></script>
@@ -62,43 +65,7 @@
         },
       };
 
-      document.addEventListener(
-        "DOMContentLoaded",
-        function () {
-          const observerOptions = {
-            threshold: 0.3, // Trigger when 30% of the section is visible
-            rootMargin: "0px 0px -50px 0px", // Trigger slightly before the section is fully visible
-          };
-
-          const observer = new IntersectionObserver(
-            function (entries) {
-              entries.forEach((entry) => {
-                if (entry.isIntersecting) {
-                  // Add animate class to all decorative bars
-                  const bars =
-                    entry.target.querySelectorAll(
-                      ".animate-on-scroll"
-                    );
-                  bars.forEach((bar) => {
-                    bar.classList.add("animate");
-                  });
-
-                  // Stop observing once animated
-                  observer.unobserve(entry.target);
-                }
-              });
-            },
-            observerOptions
-          );
-
-          // Start observing the About section
-          const aboutSection =
-            document.getElementById("apropos");
-          if (aboutSection) {
-            observer.observe(aboutSection);
-          }
-        }
-      );
+      
     </script>
   </head>
   <body class="bg-gray-50">
@@ -113,7 +80,8 @@
         class="w-full max-w-7xl mx-auto px-6 lg:px-12 py-6"
       >
         <div class="flex items-center justify-between">
-          <div class="flex items-center space-x-2">
+          <div class="flex items-center space-x-2 "  >
+            <a href="index.html">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               class="w-25 h-12"
@@ -476,6 +444,7 @@
                 </linearGradient>
               </defs>
             </svg>
+            </a>
           </div>
 
           <div class="flex items-center space-x-8">
@@ -501,7 +470,7 @@
                 >Services</a
               >
               <a
-                href="#industries"
+                href="industries.html"
                 class="hover:text-brand-orange transition-colors"
                 data-i18n="nav.industries"
                 >Industries</a
@@ -568,19 +537,19 @@
         >
           <!-- Text section -->
           <div
-            class="col-span-1 sm:col-span-2 lg:col-span-3 max-w-full sm:max-w-2xl md:max-w-3xl pb-20 sm:pb-28 lg:pb-36"
+            class="col-span-1 sm:col-span-2 lg:col-span-3 max-w-full sm:max-w-2xl md:max-w-3xl pb-20 sm:pb-28 lg:pb-36  animate-on-scroll delay-800"
           >
             <h1
-              class="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-inter my-6 sm:my-8 tracking-wide leading-snug"
+              class="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-inter my-6 sm:my-8 tracking-wide leading-snug "
             >
               <span
-                class="text-brand-yellow"
+                class="text-brand-yellow "
                 data-i18n="hero.solutions"
                 >Solutions</span
               >
               <span>IT</span>
-              <span data-i18n="hero.for">pour</span><br />
-              <span data-i18n="hero.your_business"
+              <span data-i18n="hero.for" >pour</span><br />
+              <span data-i18n="hero.your_business" 
                 >votre entreprise</span
               >
             </h1>
@@ -683,7 +652,7 @@
       <!-- Decorative bars -->
 
       <div
-        class="flex space-x-2 pb-20 animate-on-load animate-on-scroll delay-500"
+        class="flex space-x-2 pb-20 animate-on-load  animate-on-scroll delay-500"
       >
         <div
           class="w-60 h-12 bg-brand-orange rounded-sm"
@@ -715,31 +684,31 @@
             <img
               src="./src/img/about-us.png"
               alt="Team collaboration"
-              class="w-full"
+              class="w-full animate-on-scroll "
             />
           </div>
           <div class="lg:col-span-4 max-md:text-center">
             <h2
-              class="text-5xl font-bold text-brand-light-blue mb-8"
+              class="text-5xl font-bold text-brand-light-blue mb-8  animate-on-scroll-b"
               data-i18n="about.title"
             >
               Qui sommes Nous
             </h2>
             <h3
-              class="text-3xl font-semibold font-inter tracking-wider text-head-buleb mb-8"
+              class="text-3xl font-semibold font-inter tracking-wider text-head-buleb mb-8 animate-on-scroll-b"
               data-i18n="about.subtitle"
             >
               Votre Partenaire de Confiance
             </h3>
             <p
-              class="text-brand-blackbl font-normal mb-8 text-2xl tracking-wide font-inter"
+              class="text-brand-blackbl font-normal mb-8 text-2xl tracking-wide font-inter animate-on-scroll-b"
               data-i18n="about.description1"
             >
               MJLINK est une société marocaine spécialisée
               dans l'intégration de solutions informatiques
               et digitales.
             </p>
-            <div class="flex items-start">
+            <div class="flex items-start animate-on-scroll-b">
               <div
                 class="w-3 h-3 flex items-center mr-4 mt-2"
               >
@@ -758,6 +727,8 @@
                 besoins.
               </p>
             </div>
+
+          
           </div>
         </div>
       </div>
@@ -767,10 +738,10 @@
     <section id="services" class="py-20">
       <div class="w-full max-w-7xl mx-auto px-6 lg:px-12">
         <div
-          class="flex items-center justify-between mb-24 animate-fade-up"
+          class="flex items-center justify-between mb-24 animate-slide-up"
         >
           <h2
-            class="text-4xl font-bold text-brand-light-blue animate-slide-left delay-200"
+            class="text-4xl font-bold text-brand-light-blue animate-on-scroll delay-200"
             data-i18n="services.title"
           >
             — Nos Services
@@ -778,7 +749,7 @@
           <!-- colors bar -->
           <div
             id="decorative-bars"
-            class="hidden md:flex space-x-2 animate-fade-up delay-300"
+            class="hidden md:flex space-x-2 animate-on-scroll-r"
           >
             <div
               class="w-10 h-8 bg-brand-light-blue rounded animate-slide-right delay-400"
@@ -795,13 +766,13 @@
           </div>
         </div>
         <div
-          class="grid md:grid-cols-3 gap-8 animate-fade-up"
+          class="grid md:grid-cols-3 gap-8  animate-on-scroll-b"
         >
           <div
-            class="flex flex-col justify-around bg-brand-orange text-white rounded-lg p-8 cursor-pointer hover:scale-105 transition-transform duration-300"
+            class="flex flex-col justify-around bg-brand-orange text-white rounded-lg p-8 cursor-pointer hover:scale-105 transition-transform duration-300  animate-fade-in delay-600"
           >
             <h3
-              class="text-2xl font-bold mb-8 pr-7 font-inter animate-fade-in"
+              class="text-2xl font-bold mb-8 pr-7 font-inter "
               data-i18n="services.infrastructure.title"
             >
               Infrastructures Réseaux
@@ -816,10 +787,10 @@
           </div>
           <!-- other service cards  -->
           <div
-            class="flex flex-col justify-around bg-brand-teal text-white p-8 rounded-lg cursor-pointer hover:scale-105 transition-transform duration-300"
+            class="flex flex-col justify-around bg-brand-teal text-white p-8 rounded-lg cursor-pointer hover:scale-105 transition-transform duration-300 animate-fade-in delay-600"
           >
             <h3
-              class="text-2xl font-bold mb-8 pr-7 font-inter animate-fade-in"
+              class="text-2xl font-bold mb-8 pr-7 font-inter "
               data-i18n="services.support.title"
             >
               Support Informatique Sur Site
@@ -835,10 +806,10 @@
           </div>
           <!--  -->
           <div
-            class="flex flex-col justify-around bg-brand-blue text-white p-8 rounded-lg cursor-pointer hover:scale-105 transition-transform duration-300"
+            class="flex flex-col justify-around bg-brand-blue text-white p-8 rounded-lg cursor-pointer hover:scale-105 transition-transform duration-300 animate-fade-in delay-600"
           >
             <h3
-              class="text-2xl font-bold mb-8 font-inter animate-fade-in"
+              class="text-2xl font-bold mb-8 font-inter "
               data-i18n="services.security.title"
             >
               Contrôle d'Accès et Vidéo surveillance
@@ -870,7 +841,7 @@
 
     <!-- Industries Section -->
     <section id="industries" class="pb-20 bg-white">
-      <div class="flex space-x-2 pb-20">
+      <div class="flex space-x-2 pb-20 animate-on-scroll">
         <div
           class="w-4/12 h-12 bg-brand-orange rounded-tr rounded-br"
         ></div>
@@ -904,20 +875,20 @@
             <img
               src="./src/img/Industries.png"
               alt="Industrial warehouse"
-              class="w-full"
+              class="w-full animate-on-scroll"
             />
             <!-- <div class="bg-brand-orange w-full h-2/10 col-span"></div> -->
             <!-- </div> -->
           </div>
           <div class="lg:col-span-4 max-md:text-center">
             <h3
-              class="text-3xl font-semibold text-head-buleb mb-6 font-inter"
+              class="text-3xl font-semibold text-head-buleb mb-6 font-inter animate-on-scroll-b delay-200"
               data-i18n="industries.subtitle"
             >
               Solutions adaptées à chaque secteur d'activité
             </h3>
             <p
-              class="text-brand-blackbl mb-4 font-inter"
+              class="text-brand-blackbl mb-4 font-inter animate-on-scroll-b delay-400"
               data-i18n="industries.description1"
             >
               Chez M-LINK, nous savons que chaque secteur a
@@ -925,7 +896,7 @@
               de l'information et de communication.
             </p>
             <p
-              class="text-brand-blackbl mb-4 font-inter"
+              class="text-brand-blackbl mb-4 font-inter animate-on-scroll-b delay-600"
               data-i18n="industries.description2"
             >
               C'est pourquoi nous proposons des solutions
@@ -936,17 +907,29 @@
               centres de données.
             </p>
             <p
-              class="text-brand-blackbl font-inter"
+              class="text-brand-blackbl font-inter animate-on-scroll-b delay-700"
               data-i18n="industries.description3"
             >
               Notre expertise multi-sectorielle vous
               garantit des services fiables et innovants,
               quel que soit votre domaine d'activité.
             </p>
+            <div
+          class=" mt-10 animate-fade-up delay-500"
+        >
+          <a
+            href="services.html"
+            class="text-head-buleb hover:text-brand-teal transition-colors font-semibold animate-pulse"
+            data-i18n="services.see_more"
+          >
+            Voir plus →
+          </a>
+        </div>
           </div>
         </div>
+        
       </div>
-      <div class="flex space-x-2 justify-end pt-32">
+      <div class="flex space-x-2 justify-end pt-32 animate-on-scroll-r">
         <div
           class="w-10 h-8 bg-brand-light-blue rounded"
         ></div>
@@ -961,8 +944,17 @@
     </section>
 
     <!-- Contact Section -->
-    <section id="contact" class="pt-20 pb-32 bg-gray-50">
-      <div class="w-full max-w-7xl mx-auto px-6 lg:px-12">
+     <section id="contact" class="pt-20 pb-32 bg-gray-50">
+   
+
+        <!-- , -->
+       
+          <!--  -->
+
+ <div class="flex space-x-2 pb-20">
+        
+
+      <div class="w-full max-w-7xl mx-auto px-6 lg:px-12 ">
         <div
           class="md:min-h-screen bg-[url('./src/img/contact.svg')] bg-cover bg-center  p-8"
         >
@@ -985,9 +977,9 @@
             </h1>
 
             <!-- Form Container -->
-            <div class="bg-white rounded-2xl p-8 shadow-lg">
+            <div class="bg-white rounded-2xl  shadow-lg">
               <div
-                class="grid md:grid-cols-2 gap-8 mb-8 pb-2 border-b-2 border-blue-50"
+                class="grid md:grid-cols-2 gap-8 p-8  border-b-2 border-blue-50"
               >
                 <div>
                   <h2
@@ -1004,13 +996,22 @@
                   transformer votre entreprise.
                 </div>
               </div>
+ <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d5231.8436585864365!2d-5.806626926150569!3d35.767242372228!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd0b8138649426d3%3A0x3ffdd33f59ecc1d2!2sMJlink!5e1!3m2!1sen!2sma!4v1757540637966!5m2!1sen!2sma"
+              class="w-full h-96 my-4 "
+              style="border: 0"
+                            loading="lazy"
 
-              <div class="gap-8">
+              allowfullscreen=""
+              referrerpolicy="no-referrer-when-downgrade"
+            ></iframe>
+
+              <div class="gap-8 pt-4  p-8 border-t-2 border-blue-50">
                 
                 <!-- Contact Form -->
                 <form
                   id="contactForm"
-                  class="space-y-5 grid md:grid-cols-2 gap-8"
+                  class=" grid md:grid-cols-2 gap-8"
                 >
                   <!-- Left Column -->
                   <div class="space-y-5">
@@ -1138,9 +1139,9 @@
               </div>
 
               <!-- Contact Information -->
-              <div class="mt-8 bg-orange-50 rounded-lg p-4">
+              <div class="hidden md:flex  rounded-lg  px-8 pb-8">
                 <div
-                  class="grid md:grid-cols-3 gap-6 text-sm"
+                  class="grid md:grid-cols-3 gap-6 text-sm bg-orange-50 p-8"
                 >
                   <div class="space-y-2">
                     <div class="flex">
@@ -1185,6 +1186,7 @@
           </div>
         </div>
       </div>
+      
     </section>
 
     <!-- Footer -->
@@ -1561,7 +1563,7 @@
         <!-- Social Media Links -->
         <div class="flex space-x-6 items-center">
           <a
-            href="https://linkedin.com"
+            href="https://www.linkedin.com/company/mjlink-ma"
             target="_blank"
             class="text-white hover:text-brand-yellow transition-colors"
             aria-label="LinkedIn"
@@ -1570,7 +1572,7 @@
           </a>
 
           <a
-            href="https://linkedin.com"
+            href="https://www.linkedin.com/company/mjlink-ma"
             target="_blank"
             class="text-white hover:text-brand-yellow transition-colors"
             aria-label="LinkedIn"
@@ -1581,7 +1583,7 @@
           </a>
 
           <a
-            href="https://instagram.com"
+            href="https://www.instagram.com/mjlinksarl"
             target="_blank"
             class="text-white hover:text-brand-yellow transition-colors"
             aria-label="Instagram"
@@ -1603,7 +1605,7 @@
             >
               About Us
             </h4>
-            <p>
+            <p data-i18n="about.description2" class="pb-2">
               The ‘Lighthouse Projects’ are in the clinical
               with disciplines of the chronic diseases
               Epilepsy, Haemophilia and Bipolar Disorder.
@@ -1611,7 +1613,7 @@
               organisations – RSCI, HSE, eHealth Ireland,
               Epilepsy Ireland, beaumont.
             </p>
-            <a href="!#"
+            <a href="#contact"
               >Get In Touch
               <i class="flaticon-right-arrow"></i
             ></a>
@@ -1668,7 +1670,79 @@
               </li>
             </ul>
           </div>
-
+ <div class="pb-24 text-center">
+            <h4
+              class="text-lg font-bold mb-4"
+              data-i18n="footer.services"
+            >
+              Services
+            </h4>
+            <ul class="space-y-2">
+              <li>
+                <a
+                  href="services.html"
+                  class="hover:text-brand-orange transition-colors"
+                  data-i18n="services.infrastructure.title"
+                >
+                  IT Support
+                </a>
+              </li>
+              <li>
+                <a
+                  href="services.html"
+                  class="hover:text-brand-orange transition-colors"
+                  data-i18n="services.support.title"
+                >
+                  Digital Workplace
+                </a>
+              </li>
+              <li>
+                <a
+                  href="services.html"
+                  class="hover:text-brand-orange transition-colors"
+                  data-i18n="services.security.title"
+                >
+                  Network Infrastructure
+                </a>
+              </li>
+              <li>
+                <a
+                  href="services.html"
+                  class="hover:text-brand-orange transition-colors"
+                  data-i18n="services.digital.title"
+                >
+                  Video & Access Control
+                </a>
+              </li>
+              <li>
+                <a
+                  href="services.html"
+                  class="hover:text-brand-orange transition-colors"
+                  data-i18n="services.equipment.title"
+                >
+                  IT Equipment Rental
+                </a>
+              </li>
+              <li>
+                <a
+                  href="services.html"
+                  class="hover:text-brand-orange transition-colors"
+                  data-i18n="services.wireless.title"
+                >
+                  Wireless Surveys
+                </a>
+              </li>
+              <li>
+                <a
+                  href="services.html"
+                  class="hover:text-brand-orange transition-colors"
+                  data-i18n="services.vente.title"
+                >
+                  IT & Datacenter Sales
+                </a>
+              </li>
+            </ul>
+          </div>
           <!-- industries -->
           <div class="pb-24 text-center">
             <h4
@@ -1680,153 +1754,74 @@
             <ul class="space-y-2">
               <li>
                 <a
-                  href="#healthcare"
+                  href="industries.html"
                   class="hover:text-brand-orange transition-colors"
-                  data-i18n="industries.healthcare"
+                  data-i18n="industries.sectors.healthcare"
                 >
                   Healthcare
                 </a>
               </li>
               <li>
                 <a
-                  href="#education"
+                  href="industries.html"
                   class="hover:text-brand-orange transition-colors"
-                  data-i18n="industries.education"
+                  data-i18n="industries.sectors.dataCenters"
+                >
+                  Data Centers
+                </a>
+              </li>
+              <li>
+                <a
+                  href="industries.html"
+                  class="hover:text-brand-orange transition-colors"
+                  data-i18n="industries.sectors.education"
                 >
                   Education
                 </a>
               </li>
               <li>
                 <a
-                  href="#logistics"
+                  href="industries.html"
                   class="hover:text-brand-orange transition-colors"
-                  data-i18n="industries.logistics"
+                  data-i18n="industries.sectors.logistics"
                 >
                   Logistics
                 </a>
               </li>
               <li>
                 <a
-                  href="#manufacturing"
+                  href="industries.html"
                   class="hover:text-brand-orange transition-colors"
-                  data-i18n="industries.manufacturing"
-                >
-                  Manufacturing
-                </a>
-              </li>
-              <li>
-                <a
-                  href="#retail"
-                  class="hover:text-brand-orange transition-colors"
-                  data-i18n="industries.retail"
+                  data-i18n="industries.sectors.retail"
                 >
                   Retail
                 </a>
               </li>
               <li>
                 <a
-                  href="#corporate"
+                  href="industries.html"
                   class="hover:text-brand-orange transition-colors"
-                  data-i18n="industries.corporate"
+                  data-i18n="industries.sectors.manufacturing"
+                >
+                  Manufacturing
+                </a>
+              </li>
+              
+              <li>
+                <a
+                  href="industries.html"
+                  class="hover:text-brand-orange transition-colors"
+                  data-i18n="industries.sectors.corporateOffices"
                 >
                   Corporate Offices
                 </a>
               </li>
-              <li>
-                <a
-                  href="#datacenters"
-                  class="hover:text-brand-orange transition-colors"
-                  data-i18n="industries.datacenters"
-                >
-                  Data Centers
-                </a>
-              </li>
+              
             </ul>
           </div>
 
-          <!-- <div class="rounded">
-            <iframe
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d5231.8436585864365!2d-5.806626926150569!3d35.767242372228!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd0b8138649426d3%3A0x3ffdd33f59ecc1d2!2sMJlink!5e1!3m2!1sen!2sma!4v1757540637966!5m2!1sen!2sma"
-              class="w-full h-full rounded"
-              style="border: 0"
-              allowfullscreen=""
-              loading="lazy"
-              referrerpolicy="no-referrer-when-downgrade"
-            ></iframe>
-          </div> -->
-          <div class="pb-24 text-center">
-            <h4
-              class="text-lg font-bold mb-4"
-              data-i18n="footer.services"
-            >
-              Services
-            </h4>
-            <ul class="space-y-2">
-              <li>
-                <a
-                  href="#support"
-                  class="hover:text-brand-orange transition-colors"
-                  data-i18n="services.support"
-                >
-                  IT Support
-                </a>
-              </li>
-              <li>
-                <a
-                  href="#workplace"
-                  class="hover:text-brand-orange transition-colors"
-                  data-i18n="services.workplace"
-                >
-                  Digital Workplace
-                </a>
-              </li>
-              <li>
-                <a
-                  href="#networks"
-                  class="hover:text-brand-orange transition-colors"
-                  data-i18n="services.networks"
-                >
-                  Network Infrastructure
-                </a>
-              </li>
-              <li>
-                <a
-                  href="#security"
-                  class="hover:text-brand-orange transition-colors"
-                  data-i18n="services.security"
-                >
-                  Video & Access Control
-                </a>
-              </li>
-              <li>
-                <a
-                  href="#rental"
-                  class="hover:text-brand-orange transition-colors"
-                  data-i18n="services.rental"
-                >
-                  IT Equipment Rental
-                </a>
-              </li>
-              <li>
-                <a
-                  href="#wireless"
-                  class="hover:text-brand-orange transition-colors"
-                  data-i18n="services.wireless"
-                >
-                  Wireless Surveys
-                </a>
-              </li>
-              <li>
-                <a
-                  href="#datacenter"
-                  class="hover:text-brand-orange transition-colors"
-                  data-i18n="services.datacenter"
-                >
-                  IT & Datacenter Sales
-                </a>
-              </li>
-            </ul>
-          </div>
+       
+         
         </div>
       </div>
       <div class="mt-8 py-4 text-center bg-brand-orange">
@@ -1841,5 +1836,7 @@
 
     <script src="i18n.js"></script>
     <script src="script.js"></script>
+
+
   </body>
 </html>

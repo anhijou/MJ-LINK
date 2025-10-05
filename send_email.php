@@ -1,4 +1,7 @@
 <?php
+error_reporting(E_ALL);
+ini_set('display_errors', 1);
+
 require 'vendor/autoload.php';
 
 use PHPMailer\PHPMailer\PHPMailer;
@@ -37,14 +40,64 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
         // Content
         $mail->isHTML(true);
-        $mail->Subject = 'New Contact Form Submission';
-        $mail->Body    = "
-            <b>Name:</b> $firstName $lastName<br>
-            <b>Email:</b> $email<br>
-            <b>Phone:</b> $phone<br>
-            <b>Company:</b> $company<br>
-            <b>Message:</b><br>$message
-        ";
+        $mail->Subject = "New Message Form $company";
+        $mail->Body = "
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset='UTF-8'>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      color: #333;
+      line-height: 1.6;
+    }
+    .container {
+      max-width: 600px;
+      margin: auto;
+      border: 1px solid #ddd;
+      padding: 20px;
+      border-radius: 8px;
+      background: #f9f9f9;
+    }
+    h2 {
+      text-align: center;
+      color: #444;
+    }
+    .field {
+      margin-bottom: 10px;
+    }
+    .label {
+      font-weight: bold;
+      color: #222;
+    }
+    .value {
+      margin-left: 5px;
+    }
+    .message {
+      margin-top: 15px;
+      padding: 10px;
+      background: #fff;
+      border-left: 4px solid #007BFF;
+      white-space: pre-line;
+    }
+  </style>
+</head>
+<body>
+  <div class='container'>
+    <h2>New Contact Form Submission</h2>
+    <div class='field'><span class='label'>Name:</span><span class='value'>$firstName $lastName</span></div>
+    <div class='field'><span class='label'>Email:</span><span class='value'>$email</span></div>
+    <div class='field'><span class='label'>Phone:</span><span class='value'>$phone</span></div>
+    <div class='field'><span class='label'>Company:</span><span class='value'>$company</span></div>
+    <div class='field message'>
+      <span class='label'>Message:</span><br>
+      $message
+    </div>
+  </div>
+</body>
+</html>
+";
 
         $mail->send();
 
@@ -59,34 +112,5 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     }
 
-       // Send confirmation email to the user
-        $confirmation = new PHPMailer(true);
-
-        try {
-       
-
-             $mail->isSMTP();
-       $mail->Host       = $_ENV['SMTP_HOST'];  // Use your SMTP server
-        $mail->SMTPAuth   = true;
-         $mail->Username   = $_ENV['SMTP_USER']; // Your email
-        $mail->Password   = $_ENV['SMTP_PASS']; // App password if Gmail
-        $mail->SMTPSecure = $_ENV['SMTP_SECURE'];               // Use 'ssl' for port 465
-        $mail->Port       = $_ENV['SMTP_PORT'];
-
-            $confirmation->setFrom($email, $firstName);
-            $confirmation->addAddress($email, $firstName); // user email
-
-            $confirmation->isHTML(true);
-            $confirmation->Subject = 'Your message was received!';
-            $confirmation->Body    = "
-        Hi $firstName,<br><br>
-        Thank you for contacting MJLINK. We have received your message and will get back to you shortly.<br><br>
-        Best regards,<br>
-        MJLINK Team
-    ";
-
-            $confirmation->send();
-        } catch (Exception $e) {
-            // You can log the error but don’t show to the user
-        }
+      
 }

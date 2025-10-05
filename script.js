@@ -98,65 +98,78 @@ document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
 });
 
 
-// Animate elements on scroll
-// const observerOptions = {
-//     threshold: 0.1,
-//     rootMargin: '0px'
-// };
-
-// const observer = new IntersectionObserver((entries) => {
-//     entries.forEach(entry => {
-//         if (entry.isIntersecting) {
-//             entry.target.classList.add('animate');
-//             observer.unobserve(entry.target);
-//         }
-//     });
-// }, observerOptions);
-
-// document.querySelectorAll('.animate-on-scroll').forEach(element => {
-//     observer.observe(element);
-// });
-
-// // Observe elements with animation classes
-// document.querySelectorAll('.animate-fade-up, .animate-slide-left').forEach(el => {
-//     observer.observe(el);
-// });
 
 
 
-
-//   document.addEventListener("DOMContentLoaded", () => {
-//     const elements = document.querySelectorAll(".animate-on-scroll");
-
-//     const observer = new IntersectionObserver((entries) => {
-//       entries.forEach(entry => {
-//         if (entry.isIntersecting) {
-//           entry.target.classList.add("animate"); // trigger animation
-//           observer.unobserve(entry.target); // optional: animate only once
-//         }
-//       });
-//     }, {
-//       threshold: 0.2 // trigger when 20% is visible
-//     });
-
-//     elements.forEach(el => observer.observe(el));
-//   });
  document.addEventListener("DOMContentLoaded", () => {
-    const elements = document.querySelectorAll(".animate-on-scroll-Y");
+    const elements = document.querySelectorAll(".animate-on-scroll-b");
 
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add("animate"); // trigger animation
-          observer.unobserve(entry.target); // optional: animate only once
-        }
-      });
-    }, {
-      threshold: 0.2 // trigger when 20% is visible
-    });
+    const observer = new IntersectionObserver(
+      (entries, observer) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("animate"); // add .animate to trigger your CSS
+            observer.unobserve(entry.target); // run animation once
+          }
+        });
+      },
+      { threshold: 0.2 } // trigger when 20% of element is visible
+    );
 
-    elements.forEach(el => observer.observe(el));
+    elements.forEach((el) => observer.observe(el));
+  });
+  // 
+  document.addEventListener("DOMContentLoaded", () => {
+    const elements = document.querySelectorAll(".animate-on-scroll");
+
+    const observer = new IntersectionObserver(
+      (entries, observer) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("animate"); // add .animate to trigger your CSS
+            observer.unobserve(entry.target); // run animation once
+          }
+        });
+      },
+      { threshold: 0.2 } // trigger when 20% of element is visible
+    );
+
+    elements.forEach((el) => observer.observe(el));
+  });
+  // 
+  document.addEventListener("DOMContentLoaded", () => {
+    const elements = document.querySelectorAll(".animate-on-scroll-r");
+
+    const observer = new IntersectionObserver(
+      (entries, observer) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("animate"); // add .animate to trigger your CSS
+            observer.unobserve(entry.target); // run animation once
+          }
+        });
+      },
+      { threshold: 0.2 } // trigger when 20% of element is visible
+    );
+
+    elements.forEach((el) => observer.observe(el));
   });
 
 
- 
+(function() {
+  const GOOGLE_ID = "G-772EYE1Q1Y"; // your tracking ID
+
+  // load gtag.js
+  const gtagScript = document.createElement("script");
+  gtagScript.async = true;
+  gtagScript.src = `https://www.googletagmanager.com/gtag/js?id=${GOOGLE_ID}`;
+  document.head.appendChild(gtagScript);
+
+  // initialize dataLayer
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  window.gtag = gtag; // make global (optional)
+
+  gtag('js', new Date());
+  gtag('config', GOOGLE_ID);
+})();

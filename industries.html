@@ -62,43 +62,7 @@
         },
       };
 
-      document.addEventListener(
-        "DOMContentLoaded",
-        function () {
-          const observerOptions = {
-            threshold: 0.3, // Trigger when 30% of the section is visible
-            rootMargin: "0px 0px -50px 0px", // Trigger slightly before the section is fully visible
-          };
-
-          const observer = new IntersectionObserver(
-            function (entries) {
-              entries.forEach((entry) => {
-                if (entry.isIntersecting) {
-                  // Add animate class to all decorative bars
-                  const bars =
-                    entry.target.querySelectorAll(
-                      ".animate-on-scroll"
-                    );
-                  bars.forEach((bar) => {
-                    bar.classList.add("animate");
-                  });
-
-                  // Stop observing once animated
-                  observer.unobserve(entry.target);
-                }
-              });
-            },
-            observerOptions
-          );
-
-          // Start observing the About section
-          const aboutSection =
-            document.getElementById("apropos");
-          if (aboutSection) {
-            observer.observe(aboutSection);
-          }
-        }
-      );
+    
     </script>
   </head>
   <body class="bg-gray-50">
@@ -495,7 +459,7 @@
                 >À propos</a
               >
               <a
-                href="#services"
+                href="services.html"
                 class="hover:text-brand-orange transition-colors"
                 data-i18n="nav.services"
                 >Services</a
@@ -507,7 +471,7 @@
                 >Industries</a
               >
               <a
-                href="/contact.html"
+                href="contact.html"
                 class="hover:text-brand-orange transition-colors"
                 data-i18n="nav.contact"
                 >Contact</a
@@ -572,174 +536,220 @@
             >
               <span
                 class="text-brand-yellow"
-                data-i18n="nav.services"
-                >services</span
+                data-i18n="nav.industries"
+                >industries</span
               ><br />
             </h1>
           </div>
         </div>
       </div>
     </section>
+
     <!--  -->
-    <div class="flex space-x-2 justify-end pt-24">
-      <div
-        class="w-10 h-8 bg-brand-light-blue rounded"
-      ></div>
-      <div class="w-8 h-8 bg-brand-blue rounded"></div>
-      <div
-        class="w-6 h-8 bg-brand-dark-Glaucous rounded"
-      ></div>
-      <div class="w-2/12 h-8 bg-brand-orange rounded"></div>
-    </div>
 
-    <section class="max-w-7xl mx-auto py-16 px-12">
-      <!-- Header -->
+    <section id="industries" class="py-20 bg-white">
+      <div class="flex space-x-2 pb-20">
+        <div
+          class="w-4/12 h-12 bg-brand-orange rounded-tr rounded-br"
+        ></div>
+        <div class="w-8 h-12 bg-brand-yellow rounded"></div>
+        <div
+          class="w-12 h-12 bg-brand-dark-Glaucous rounded"
+        ></div>
+        <div
+          class="w-6 h-12 bg-brand-light-blue rounded"
+        ></div>
+        <div class="w-8 h-12 bg-brand-blue rounded"></div>
+      </div>
 
-      <!-- Cards Grid -->
-      <div
-        class="grid lg:grid-cols-3 md:grid-cols-2 gap-8 animate-fade-up"
-      >
-        <div
-          class="flex flex-col justify-around bg-brand-orange text-white rounded-lg p-8 cursor-pointer hover:scale-105 transition-transform duration-300"
+      <div class="w-full max-w-7xl mx-auto px-6 lg:px-12">
+        <h2
+          class="text-4xl font-bold text-brand-light-blue mb-12"
+          data-i18n="industries.title"
         >
-          <h3
-            class="text-2xl font-bold mb-8 pr-7 font-inter animate-fade-in"
-            data-i18n="services.infrastructure.title"
-          >
-            Infrastructures Réseaux
-          </h3>
-          <p
-            class="opacity-90 font-inter animate-fade-in delay-200"
-            data-i18n="services.infrastructure.description"
-          >
-            Conception et installation de réseaux
-            informatiques adaptés pour votre entreprise.
-          </p>
-        </div>
-        <!-- other service cards  -->
+          — Industries
+        </h2>
         <div
-          class="flex flex-col justify-around bg-brand-teal text-white p-8 rounded-lg cursor-pointer hover:scale-105 transition-transform duration-300"
+          class="flex flex-col lg:grid lg:grid-cols-8 items-center gap-12"
         >
-          <h3
-            class="text-2xl font-bold mb-8 pr-7 font-inter animate-fade-in"
-            data-i18n="services.support.title"
-          >
-            Support Informatique Sur Site
-          </h3>
-          <p
-            class="opacity-90 font-inter animate-fade-in delay-200"
-            data-i18n="services.support.description"
-          >
-            Assistance rapide et efficace pour résoudre vos
-            problèmes informatiques directement sur place.
-          </p>
-        </div>
-        <!--  -->
-        <div
-          class="flex flex-col justify-around bg-brand-blue text-white p-8 rounded-lg cursor-pointer hover:scale-105 transition-transform duration-300"
-        >
-          <h3
-            class="text-2xl font-bold mb-8 font-inter animate-fade-in"
-            data-i18n="services.security.title"
-          >
-            Contrôle d'Accès et Vidéo surveillance
-          </h3>
-          <p
-            class="opacity-90 font-inter animate-fade-in delay-200"
-            data-i18n="services.security.description"
-          >
-            Des solutions fiables et modernes pour sécuriser
-            vos locaux et vos accès.
-          </p>
+          <!-- class="flex flex-col lg:grid lg:grid-cols-7 items-center gap-20" -->
+
+          <div class="lg:col-span-4 w-full">
+            <!-- <div class="grid grid-cols-12 "> -->
+
+            <!-- <div class="bg-brand-orange w-full h-2 col-span"></div> -->
+            <img
+              src="./src/img/Industries.png"
+              alt="Industrial warehouse"
+              class="w-full"
+            />
+            <!-- <div class="bg-brand-orange w-full h-2/10 col-span"></div> -->
+            <!-- </div> -->
+          </div>
+          <div class="lg:col-span-4 max-md:text-center">
+            <h3
+              class="text-3xl font-semibold text-head-buleb mb-6 font-inter"
+              data-i18n="industries.subtitle"
+            >
+              Solutions adaptées à chaque secteur d'activité
+            </h3>
+            <p
+              class="text-brand-blackbl mb-4 font-inter"
+              data-i18n="industries.description1"
+            >
+              Chez M-LINK, nous savons que chaque secteur a
+              ses propres défis en matière de technologies
+              de l'information et de communication.
+            </p>
+            <p
+              class="text-brand-blackbl mb-4 font-inter"
+              data-i18n="industries.description2"
+            >
+              C'est pourquoi nous proposons des solutions
+              personnalisées, conçues pour répondre aux
+              besoins de la santé, de l'éducation, de la
+              logistique, de l'industrie manufacturière, du
+              commerce de détail, de la finance et des
+              centres de données.
+            </p>
+            <p
+              class="text-brand-blackbl font-inter"
+              data-i18n="industries.description3"
+            >
+              Notre expertise multi-sectorielle vous
+              garantit des services fiables et innovants,
+              quel que soit votre domaine d'activité.
+            </p>
+          </div>
         </div>
 
         <div
-          class="flex flex-col justify-around bg-brand-light-blue text-white rounded-lg p-8 cursor-pointer hover:scale-105 transition-transform duration-300"
+          class="w-full max-w-7xl mx-auto px-6 lg:px-12 py-16"
         >
-          <h3
-            class="text-2xl font-bold mb-8 pr-7 font-inter animate-fade-in"
-            data-i18n="services.digital.title"
+          <div
+            class="flex flex-col lg:grid lg:grid-cols-8 items-center gap-12"
           >
-            Infrastructures Réseaux
-          </h3>
-          <p
-            class="opacity-90 font-inter animate-fade-in delay-200"
-            data-i18n="services.digital.description"
-          >
-            Conception et installation de réseaux
-            informatiques adaptés pour votre entreprise.
-          </p>
+            <!-- class="flex flex-col lg:grid lg:grid-cols-7 items-center gap-20" -->
+
+            <div class="lg:col-span-4 max-md:text-center">
+              <h3
+                class="text-3xl font-semibold text-head-buleb mb-6 font-inter"
+                data-i18n="industries.subsecondtitle"
+              >
+                Driving Operational Efficiency
+              </h3>
+              <p
+                class="text-brand-blackbl mb-4 font-inter"
+                data-i18n="industries.seconddescription1"
+              >
+                At MJ-LINK, we believe that technology
+                should not only solve today’s challenges but
+                also prepare businesses for the demands of
+                tomorrow. Our sector-specific solutions are
+                designed to streamline workflows, reduce
+                inefficiencies, and enhance overall
+                productivity.
+              </p>
+              <p
+                class="text-brand-blackbl mb-4 font-inter"
+                data-i18n="industries.seconddescription2"
+              >
+                By integrating the latest digital tools with
+                our in-depth knowledge of industry
+                standards, we empower organizations to
+                transform their operations into agile,
+                efficient, and resilient systems.
+              </p>
+              <p
+                class="text-brand-blackbl font-inter"
+                data-i18n="industries.seconddescription3"
+              >
+                This proactive approach ensures that your
+                business remains competitive, adaptable, and
+                fully equipped to embrace technological
+                change in an evolving marketplace.
+              </p>
+            </div>
+            <div class="lg:col-span-4 w-full">
+              <!-- <div class="grid grid-cols-12 "> -->
+
+              <!-- <div class="bg-brand-orange w-full h-2 col-span"></div> -->
+              <img
+                src="./src/img/industries-2.png"
+                alt="Industrial warehouse"
+                class="w-full"
+              />
+              <!-- <div class="bg-brand-orange w-full h-2/10 col-span"></div> -->
+              <!-- </div> -->
+            </div>
+          </div>
         </div>
-        <!-- other service cards  -->
+
         <div
-          class="flex flex-col justify-around bg-brand-orange text-white p-8 rounded-lg cursor-pointer hover:scale-105 transition-transform duration-300"
+          class="flex flex-col lg:grid lg:grid-cols-8 items-center gap-12"
         >
-          <h3
-            class="text-2xl font-bold mb-8 pr-7 font-inter animate-fade-in"
-            data-i18n="services.equipment.title"
-          >
-            Support Informatique Sur Site
-          </h3>
-          <p
-            class="opacity-90 font-inter animate-fade-in delay-200"
-            data-i18n="services.equipment.description"
-          >
-            Assistance rapide et efficace pour résoudre vos
-            problèmes informatiques directement sur place.
-          </p>
-        </div>
-        <!--  -->
-        <div
-          class="flex flex-col justify-around bg-brand-teal text-white p-8 rounded-lg cursor-pointer hover:scale-105 transition-transform duration-300"
-        >
-          <h3
-            class="text-2xl font-bold mb-8 font-inter animate-fade-in"
-            data-i18n="services.wireless.title"
-          >
-            Contrôle d'Accès et Vidéo surveillance
-          </h3>
-          <p
-            class="opacity-90 font-inter animate-fade-in delay-200"
-            data-i18n="services.wireless.description"
-          >
-            Des solutions fiables et modernes pour sécuriser
-            vos locaux et vos accès.
-          </p>
-        </div>
-        <div
-          class="flex flex-col justify-around bg-brand-blue text-white p-8 rounded-lg cursor-pointer hover:scale-105 transition-transform duration-300"
-        >
-          <h3
-            class="text-2xl font-bold mb-8 font-inter animate-fade-in"
-            data-i18n="services.vente.title"
-          >
-            Contrôle d'Accès et Vidéo surveillance
-          </h3>
-          <p
-            class="opacity-90 font-inter animate-fade-in delay-200"
-            data-i18n="services.vente.description"
-          >
-            Des solutions fiables et modernes pour sécuriser
-            vos locaux et vos accès.
-          </p>
+          <!-- class="flex flex-col lg:grid lg:grid-cols-7 items-center gap-20" -->
+
+          <div class="lg:col-span-4 w-full">
+           
+            <img
+              src="./src/img/industries-3.png"
+              alt="Industrial warehouse"
+              class="w-full"
+            />
+           
+          </div>
+          <div class="lg:col-span-4 max-md:text-center">
+            <h3
+              class="text-3xl font-semibold text-head-buleb mb-6 font-inter"
+              data-i18n="industries.subthiredtitle"
+            >
+              Supporting Growth and Innovation
+            </h3>
+            <p
+              class="text-brand-blackbl mb-4 font-inter"
+              data-i18n="industries.thireddescription1"
+            >
+              Beyond optimizing daily operations, MJ-LINK
+              focuses on long-term value creation for our
+              partners. Whether your objective is to
+              modernize infrastructure, strengthen
+              cybersecurity, harness the power of data, or
+              deliver richer customer experiences, our
+              solutions are built to grow alongside your
+              business.
+            </p>
+            <p
+              class="text-brand-blackbl mb-4 font-inter"
+              data-i18n="industries.thireddescription2"
+            >
+              We provide scalable, secure, and reliable
+              technologies that evolve with your ambitions.
+              More than just a provider, we aim to be a
+              strategic partner who supports innovation at
+              every stage of your digital journey, helping
+              you turn challenges into opportunities and
+              ensuring lasting success across all industries
+              we serve.
+            </p>
+           
+          </div>
         </div>
       </div>
       <!--  -->
-      <div
-        id="decorative-bars"
-        class="flex space-x-2 animate-fade-up delay-300 my-16"
-      >
+
+      <!--  -->
+
+      <div class="flex space-x-2 justify-end pt-32">
         <div
-          class="w-10 h-8 bg-brand-light-blue rounded animate-slide-right delay-400"
+          class="w-10 h-8 bg-brand-light-blue rounded"
+        ></div>
+        <div class="w-8 h-8 bg-brand-blue rounded"></div>
+        <div
+          class="w-6 h-8 bg-brand-dark-Glaucous rounded"
         ></div>
         <div
-          class="w-8 h-8 bg-brand-blue rounded animate-slide-right delay-500"
-        ></div>
-        <div
-          class="w-6 h-8 bg-brand-dark-Glaucous rounded animate-slide-right delay-600"
-        ></div>
-        <div
-          class="w-12 h-8 bg-brand-orange rounded animate-slide-right delay-700"
+          class="w-2/12 h-8 bg-brand-orange rounded"
         ></div>
       </div>
     </section>

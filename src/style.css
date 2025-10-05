@@ -21,9 +21,20 @@
 /* Animated state - visible */
 .animate-on-scroll.animate {
   opacity: 1;
-  transform: translateY(0);
+  transform: translateX(0);
 }
 
+/* Variant: slide from bottom */
+.animate-on-scroll-bottom {
+  opacity: 0;
+  transform: translateY(50px);
+  transition: all 0.8s ease-out;
+}
+
+.animate-on-scroll-bottom.animate {
+  opacity: 1;
+  transform: translateY(0);
+}
 
 /* Staggered delays for each bar */
 .animate-on-scroll:nth-child(1) {
@@ -149,15 +160,47 @@
 
 /* servises */
 
-/* Hidden state */
-.animate-on-scroll-Y {
+/* common */
+ /* Custom scroll animation styles */
+    .animate-on-scroll-b {
+      opacity: 0;
+      transform: translateY(50px);
+      transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    .animate-on-scroll-b.animate {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* Staggered delays */
+    .animate-on-scroll-b:nth-child(1) { transition-delay: 0.1s; }
+    .animate-on-scroll-b:nth-child(2) { transition-delay: 0.2s; }
+    .animate-on-scroll-b:nth-child(3) { transition-delay: 0.3s; }
+    .animate-on-scroll-b:nth-child(4) { transition-delay: 0.4s; }
+    .animate-on-scroll-b:nth-child(5) { transition-delay: 0.5s; }
+    .animate-on-scroll-b:nth-child(6) { transition-delay: 0.6s; }
+
+ /* Custom scroll animation styles */
+  /* Initial state - hidden */
+.animate-on-scroll-r {
   opacity: 0;
-  transform: translateY(50px); /* you can change this */
+  transform: translateX(
+    100px
+  ); /* instead of translateX(-100px) */
   transition: all 0.8s ease-out;
 }
 
-/* When visible */
-.animate-on-scroll-Y.animate {
+/* Animated state - visible */
+.animate-on-scroll-r.animate {
   opacity: 1;
-  transform: translateY(0);
+  transform: translateX(0);
 }
+
+    /* Staggered delays */
+    .animate-on-scroll-r:nth-child(1) { transition-delay: 0.1s; }
+    .animate-on-scroll-r:nth-child(2) { transition-delay: 0.2s; }
+    .animate-on-scroll-r:nth-child(3) { transition-delay: 0.3s; }
+    .animate-on-scroll-r:nth-child(4) { transition-delay: 0.4s; }
+    .animate-on-scroll-r:nth-child(5) { transition-delay: 0.5s; }
+    .animate-on-scroll-r:nth-child(6) { transition-delay: 0.6s; }   
