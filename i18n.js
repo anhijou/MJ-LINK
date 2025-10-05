@@ -17,7 +17,7 @@ class I18n {
           contact: "Contact",
         },
         hero: {
-          solutions: "Solutions",
+          solutions: "Solutions IT",
           for: "pour",
           your_business: "votre entreprise",
           description:
